@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep furniture recommendations server-side through Lovable AI Gateway and validate every returned collection and photo against `site-data`; this prevents invented showroom inventory from reaching shoppers.

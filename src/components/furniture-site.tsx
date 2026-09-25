@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone, Star } from "lucide-react";
 import { Disclaimer, Footer, Header, Photo } from "@/components/site-chrome";
+import { RoomAdvisor } from "@/components/room-advisor";
 import { business, collections, decor, hero, interior, lighting, src, type CollectionKey, type Img } from "@/lib/site-data";
 
 function Heading({ no, label, title, copy }: { no: string; label: string; title: string; copy?: string }) {
@@ -40,7 +41,7 @@ export function FurnitureSite() {
 
       <section id="idea" className="band"><div className="wrap idea">
         <Heading no="01" label="THE IDEA" title="A local showroom for the whole home." />
-        <p className="lead">Home Style Furniture Mart brings together sofas, beds, dining sets, seating, lighting and décor under one roof in Khatima — so you can see, compare and choose pieces in person.</p>
+        <p className="lead">Furniture should feel considered, comfortable and made for the way you live. Explore pieces for everyday spaces, from living rooms and bedrooms to dining areas and more.</p>
       </div></section>
 
       <section id="collections" className="band band-cream"><div className="wrap">
@@ -49,6 +50,8 @@ export function FurnitureSite() {
           {[["Sofas", "#sofas"], ["Lighting", "#lighting"], ["Bedroom", "#beds"], ["Dining", "#dining"], ["Seating", "#seating"], ["Décor", "#decor"]].map(([l, h], n) => <li key={h}><a href={h}><span>0{n + 3}</span>{l}<ArrowRight /></a></li>)}
         </ol>
       </div></section>
+
+      <RoomAdvisor />
 
       <Preview k="sofas" />
       <Static id="lighting" no="04" label="LIGHTING" title="Lighting & accents" copy="Lamps and décor pieces to finish a room." images={lighting} dark />
