@@ -23,7 +23,6 @@ function Static({ id, no, label, title, copy, images, dark = false }: { id: stri
 }
 
 export function FurnitureSite() {
-  const cols: CollectionKey[] = ["sofas", "beds", "dining", "seating", "exterior", "gallery"];
   return <div className="site-shell">
     <Disclaimer />
     <Header />
@@ -78,7 +77,6 @@ export function FurnitureSite() {
           <a href={business.facebook} target="_blank" rel="noreferrer"><Facebook /><span><small>Facebook</small>Follow on Facebook</span></a>
         </div>
       </div></section>
-      {cols.length ? null : null}
     </main>
     <Footer />
   </div>;
