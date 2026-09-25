@@ -10,33 +10,103 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BedsRouteImport } from './routes/beds'
+import { Route as DiningRouteImport } from './routes/dining'
+import { Route as ExteriorRouteImport } from './routes/exterior'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as SeatingRouteImport } from './routes/seating'
+import { Route as SofasRouteImport } from './routes/sofas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BedsRoute = BedsRouteImport.update({
+  id: '/beds',
+  path: '/beds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiningRoute = DiningRouteImport.update({
+  id: '/dining',
+  path: '/dining',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExteriorRoute = ExteriorRouteImport.update({
+  id: '/exterior',
+  path: '/exterior',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeatingRoute = SeatingRouteImport.update({
+  id: '/seating',
+  path: '/seating',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SofasRoute = SofasRouteImport.update({
+  id: '/sofas',
+  path: '/sofas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/beds': typeof BedsRoute
+  '/dining': typeof DiningRoute
+  '/exterior': typeof ExteriorRoute
+  '/gallery': typeof GalleryRoute
+  '/seating': typeof SeatingRoute
+  '/sofas': typeof SofasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/beds': typeof BedsRoute
+  '/dining': typeof DiningRoute
+  '/exterior': typeof ExteriorRoute
+  '/gallery': typeof GalleryRoute
+  '/seating': typeof SeatingRoute
+  '/sofas': typeof SofasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/beds': typeof BedsRoute
+  '/dining': typeof DiningRoute
+  '/exterior': typeof ExteriorRoute
+  '/gallery': typeof GalleryRoute
+  '/seating': typeof SeatingRoute
+  '/sofas': typeof SofasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/beds' | '/dining' | '/exterior' | '/gallery' | '/seating' | '/sofas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    '/' | '/beds' | '/dining' | '/exterior' | '/gallery' | '/seating' | '/sofas'
+  id:
+    | '__root__'
+    | '/'
+    | '/beds'
+    | '/dining'
+    | '/exterior'
+    | '/gallery'
+    | '/seating'
+    | '/sofas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BedsRoute: typeof BedsRoute
+  DiningRoute: typeof DiningRoute
+  ExteriorRoute: typeof ExteriorRoute
+  GalleryRoute: typeof GalleryRoute
+  SeatingRoute: typeof SeatingRoute
+  SofasRoute: typeof SofasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +118,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/beds': {
+      id: '/beds'
+      path: '/beds'
+      fullPath: '/beds'
+      preLoaderRoute: typeof BedsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dining': {
+      id: '/dining'
+      path: '/dining'
+      fullPath: '/dining'
+      preLoaderRoute: typeof DiningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exterior': {
+      id: '/exterior'
+      path: '/exterior'
+      fullPath: '/exterior'
+      preLoaderRoute: typeof ExteriorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seating': {
+      id: '/seating'
+      path: '/seating'
+      fullPath: '/seating'
+      preLoaderRoute: typeof SeatingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sofas': {
+      id: '/sofas'
+      path: '/sofas'
+      fullPath: '/sofas'
+      preLoaderRoute: typeof SofasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BedsRoute: BedsRoute,
+  DiningRoute: DiningRoute,
+  ExteriorRoute: ExteriorRoute,
+  GalleryRoute: GalleryRoute,
+  SeatingRoute: SeatingRoute,
+  SofasRoute: SofasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
