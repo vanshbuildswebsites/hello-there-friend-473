@@ -1,21 +1,17 @@
-# Home Style Furniture Mart website
+# Final V4 polish and AI room recommendations
 
-## Build
-- Create a polished one-page showroom website with sticky desktop/mobile navigation and smooth anchor scrolling.
-- Add a full-bleed furniture hero, concise showroom introduction, eight category tiles, featured furniture, trust points, gallery lightbox, clearly labelled sample reviews, and a showroom contact section.
-- Use configurable placeholder phone, WhatsApp, address, and hours in one content block until verified business details are available.
-- Build responsive layouts from mobile through desktop with semantic markup, accessible controls, lazy-loaded imagery, visible focus states, and reduced-motion support.
+## Changes
+- Remove the invalid `exterior-01.jpg` placeholder file and keep the showroom section using only the existing real exterior photos.
+- Replace the “The Idea” paragraph with the supplied wording and refine the existing collection captions without changing routes, imagery, hero, contact details, disclaimer, or visual direction.
+- Add one editorial-style “Room recommendations” section where shoppers enter room type, dimensions, style, budget, and optional needs.
+- Send the form securely through a server function to Lovable AI Gateway, then show only validated recommendations from the existing showroom collections and photo library.
+- Include clear loading, retry, validation, and failure states; recommended photos link to the existing category pages.
 
-## Visual direction
-- Warm editorial showroom aesthetic: soft ivory, walnut, charcoal, muted olive, and brass accents.
-- Refined serif display type paired with a clean sans-serif body.
-- Restrained shadows, small corner radii, subtle reveal and image-scale interactions, and no decorative gradients.
+## Technical details
+- Use a validated `createServerFn` request so the AI credential remains server-side.
+- Give the model a fixed catalog of available collections and photos, request structured JSON, and filter its response against that catalog before returning it to the page.
+- Keep all styling within the current black, cream, gold, serif/sans editorial system and preserve mobile behavior.
 
-## Functional details
-- WhatsApp and call links work throughout the page.
-- Mobile menu opens and closes cleanly.
-- Gallery images open in an accessible modal with previous/next navigation.
-- Page metadata includes unique title, description, Open Graph fields, and social card settings.
-
-## Validation
-- Check preview health and test navigation, mobile menu, gallery modal, CTA links, layout overflow, and desktop/mobile screenshots.
+## Verification
+- Confirm the missing image is no longer requested, the existing category routes still work, and the AI form returns valid showroom-only recommendations.
+- Check the finished page at mobile and desktop widths, including errors and horizontal overflow.
